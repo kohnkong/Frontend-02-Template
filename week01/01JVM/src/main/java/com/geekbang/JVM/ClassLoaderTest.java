@@ -1,8 +1,5 @@
 package com.geekbang.JVM;
 
-import java.io.File;
-import java.lang.reflect.Method;
-
 /**
  * @Description: TODO
  * @author: kongqf
@@ -20,7 +17,7 @@ public class ClassLoaderTest {
         //指定自定义类加载器加载xlass路径
         loader.setBasPath("src/main/resources/");
         //指定加载Hello类
-        Class<?> clazz = loader.loadClass("Hello");
+        Class<?> clazz = loader.findClass("Hello");
         //System.out.println(clazz.getClassLoader());//输出加载类Hello的加载器
         //Object object = clazz.newInstance();//创建Hello类对象，会调用构造方法
         //clazz.getDeclaredMethods()[0].invoke(clazz.newInstance());

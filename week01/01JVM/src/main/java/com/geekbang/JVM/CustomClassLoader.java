@@ -8,9 +8,10 @@ import java.io.*;
  * @date: 2021年03月20日 17:52
  */
 public class CustomClassLoader extends ClassLoader {
-    private String name;// 类加载器的名字，方便看测试结果
-    private String basPath;// 指定加载类的基本路径
-    private final String FILETYPE = ".xlass";// 加载文件的扩展名
+    // 指定加载类的基本路径
+    private String basPath;
+    // 加载文件的扩展名
+    private final String FILETYPE = ".xlass";
 
     public CustomClassLoader() {
     }
