@@ -9,11 +9,13 @@
           java -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xmx1g -Xms1g -XX:+UseConcMarkSweepGC GCLogAnalysis
       1.4 -XX:+UseG1GC G1 GC
           java -XX:+PrintGCDetails -XX:+PrintGCDateStamps -Xmx512m -Xms512m -XX:+UseG1GC GCLogAnalysis`
+          
 2.（选做）使用压测工具（wrk 或 sb），演练 gateway-server-0.0.1-SNAPSHOT.jar 示例。
    1. java -jar  -XX:+PrintGC -XX:+PrintGCDateStamps -Xmx512m -Xms512m -XX:+UseG1GC gateway-server-0.0.1-SNAPSHOT.jar
       wrk -c 40 -d30s http://localhost:8088 并发数是17990，Young GC 执行了94次
    2. java -jar  -XX:+PrintGC -XX:+PrintGCDateStamps -Xmx1g -Xms1g -XX:+UseG1GC gateway-server-0.0.1-SNAPSHOT.jar
       wrk -c 40 -d30s http://localhost:8088 并发数是20082，Young GC 执行了52次
+      
 4.（必做）根据上述自己对于 1 和 2 的演示，写一段对于不同 GC 和堆内存的总结，提交到 GitHub。
    >总结：
    JVM调优主要看3个方便：内存使用情况、GC运行情况、线程运行情况
